@@ -54,13 +54,14 @@ jQuery(document).ready(function ($){
       return false;
   });
   //hiển thị categories
-  if($('.bar-categories').length>0){
-    $(document).click('.bar-categories',function (e) {
-      $('.categries-menu').addClass('active');
+  if($('.categories').length>0){
+    $(document).click('.categories',function (e) {
+      e.preventDefault();
+      $('.categories').find('.categries-menu').addClass('active');
     });
     $(document).click(function (e) {
       var elm = $(e.target);
-      if(!elm.closest('.bar-categories').length){
+      if(!elm.closest('.categories').length){
         $('.categries-menu').removeClass('active');
         $('.categries-menu').find('.sub-menu-categories.active').removeClass('active');
       }
