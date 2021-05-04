@@ -535,6 +535,9 @@ ul.menu-header{
 }
 /* search product */
 /*the container must be positioned relative:*/
+.search-mobile{
+    display: none;
+}
 .autocomplete {
     position: relative;
 }
@@ -1450,6 +1453,9 @@ del{
         justify-content: space-between;
         position: relative;
     }
+    .search-category{
+        height: 40px;
+    }
     .search-header{
         border: none;
         width: unset;
@@ -1469,7 +1475,6 @@ del{
     .search-category form{
         display: flex;
         justify-content: space-between;
-        width: 240px;
     }
     .autocomplete{
         position: absolute;
@@ -1493,9 +1498,13 @@ del{
         margin-top: 10px;
     }
     .search{
+        display: none;
+    }
+    .search-mobile{
+        display: block;
         border: 1px solid #0ca8c9;
         background: none;
-        position: static;
+        position: relative;
         color: #fff;
         width: 40px;
         min-width: 0;
@@ -1821,6 +1830,9 @@ del{
     .select{
         width: 9em;
     }
+    .search-category form{
+        width: 240px;
+    }
     .search-header{
         max-width: 240px;
         width: 100%;
@@ -1867,37 +1879,38 @@ del{
     .site-search-wrapper{
         margin-top: 0;
     }
+    .search-mobile{
+        display: none;
+    }
     .search-header{
         max-width: 542px;
         position: relative;
         display: flex;
         width: 75%;
-        border: 1px solid #f2f2f2;
-        border-radius: 30px;
         height: 2.5em;
-        justify-content: unset;
+        justify-content: center;
     }
     .search-category{
         position: relative;
+        border: 1px solid #cfcfcf;
+        border-radius: 25px;
     }
-    .search-category form{
-        width: auto;
+    .search{
+        display: block;
+        width: 57px;
+        height: 40px;
+        border-radius: 0 25px 25px 0;
+        right: -35px;
+    }
+    .autocomplete.active{
+        margin-top: 0;
     }
     .autocomplete{
         position: relative;
         display: block;
     }
-    .search{
-        position: absolute;
-        top: 0;
-        left: 100%;
-        border: 1px solid #0ca8c9;
-        min-width: 57px;
-        min-height: 40px;
-        background-color: #0ca8c9;
-        color: #ffffff;
-        font-size: 18px;
-        border-radius: 0 25px 25px 0;
+    .search-category form{
+        width: auto;
     }
     .select{
         border: none;
@@ -1920,7 +1933,7 @@ del{
         width: auto;
     }
     .search-category input[type="text"]{
-        min-width: 210px;
+        min-width: 230px;
         width: 100%;
         border: none;
         font-size: 12px;
@@ -2144,9 +2157,21 @@ del{
         width: auto;
     }
 }
+@media (min-width: 800px){
+    .site-wrapper{
+        max-width: 800px;
+    }
+    .site-search-wrapper{
+        justify-content: space-between;
+        margin-left: 30px;
+    }
+}
 @media (min-width: 1024px) {
     .site-wrapper{
         max-width: 1024px;
+    }
+    .location-find-us a{
+        font-size: 12px;
     }
     .nav-menu{
         position: static;
@@ -2212,18 +2237,27 @@ del{
     }
     .site-search-wrapper{
         justify-content: space-between;
+        margin: 0;
     }
     .search-header{
         width: 100%;
+        justify-content: left;
     }
     .search-category{
         height: 40px;
     }
+    .select{
+        width: 155px;
+    }
+    select{
+        padding: 0 1em 0 1.5em;
+    }
     .search-category input[type="text"]{
-        min-width: 345px;
+        min-width: 390px;
     }
     .search{
         top: -1px;
+        right: 0;
     }
     .icon-header{
         width: 100px;
@@ -2244,7 +2278,7 @@ del{
     .carousel-content{
         max-width: 655px;
         width: 100%;
-        top: 27%;
+        top: 30%;
         left: unset;
     }
     .carousel-content-title{
@@ -2252,11 +2286,11 @@ del{
         line-height: 90px;
     }
     .sub-carousel-content{
-        margin-top: 25px;
+        margin-top: 10px;
         font-size: 18px;
     }
     .shop-now{
-        margin-top: 50px;
+        margin-top: 45px;
     }
     .caurosel .caurosel_action button{
         margin: 0 20px;
@@ -2357,6 +2391,9 @@ del{
     }
     .form-text-email{
         margin-top: 64px;
+    }
+    .example-text input[type="submit"]{
+        right: 16.5%;
     }
     .company-footer, .categories-footer, .quick-link{
         padding-left: 0
