@@ -87,6 +87,26 @@ jQuery(document).ready(function ($){
       }
     });
   }
+  //show contracts header mobile
+  if($('.contracts-small-mobile').length>0){
+    $(document).on('click','.contracts-small-mobile', function (e) {
+      $(this).parent('.header-contracts').find('.contracts-content').addClass('active');
+      e.preventDefault();
+    });
+    $(document).click(function(e) {
+      var elm = $(e.target);
+      if(!elm.closest('.contracts-small-mobile').length>0){
+        $('.contracts-content').removeClass('active');
+      }
+    });
+  }
+  //search mobile
+  if($('.search').length>0){
+    $(document).on('click', '.search', function(e) {
+      $('.autocomplete').toggleClass('active');
+      e.preventDefault();
+    });
+  }
   //điếm ngược time
   if($("#countdown").length>0){
     const second = 1000,
